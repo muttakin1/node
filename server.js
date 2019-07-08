@@ -11,7 +11,7 @@ app.get('/second',function(req,res){
 })
 // var server = http.createServer(function(req, res){
 //   res.statusCode = 200;
-//   res.setHeader('Content-Type', 'text/html');
+//   sre.setHeader('Content-Type', 'text/html');
 //   fs.readFile('index.html', function(err,data){
 //     if (err){
 //        return console.log("File read error")

@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/muttakin1/node/issues"
   },
-  "homepage": "https://github.com/muttakin1/node#readme"
+  "homepage": "https://github.com/muttakin1/node#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
