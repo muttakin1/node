@@ -3,6 +3,20 @@ var express = require('express');
 var app = express();
 var server= http.Server(app);
 var bodyParser=require ('body-parser');
+var mongo = require('mongodb');
+
+var db_url= "mongodb://localhost:27017"
+var db;
+mongo.MongoClient.connect(db_url,{useNewUrlParser:true}, 
+  function(err,client){
+    if(err){
+      console.log("Could Not Connect DB")
+    }else{
+      db=client.db('node-cw9')
+
+    }
+
+})
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 
@@ -24,6 +38,11 @@ app.get('/article',function(req,res){
 })
 app.post('/article/new',function(req,res){
   console.log(req.body)
+  db.createCollection('articles',function(err,collection){
+    console.log(collection)
+  })
+  var collection =db.collection('articles');
+  collection.save(req.body)
   res.send({message:"data received"})
 })
 // var server = http.createServer(function(req, res){
