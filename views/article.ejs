@@ -1,6 +1,6 @@
-<%include ./header.ejs %>
-        <h1>Article</h1>
-        <p>Title:<%=article.title%> </p>
-        <p>Content: <%=article.content%></p>
-        
-<% include ./footer.ejs %>
+<% include ./partials/header.ejs %>
+    <div class="container">
+      <h1> <%= article.title %> </h1>
+      <p> <%= article.content %> </p>
+    </div>
+<% include ./partials/footer.ejs %>
